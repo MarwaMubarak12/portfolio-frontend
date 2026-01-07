@@ -1,0 +1,47 @@
+/* Dark Theme Base */
+.portfolio-wrapper { background-color: #0f172a; color: #cbd5e1; font-family: 'Inter', sans-serif; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 100px 0; text-align: center; }
+.dark-section { background-color: #1e293b; }
+.section-title { font-size: 2.5rem; color: #fff; margin-bottom: 50px; }
+
+/* Navbar */
+.navbar { background: rgba(15, 23, 42, 0.95); padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #334155; }
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: bold; color: #fff; }
+.logo span { color: #6366f1; }
+nav a { margin-left: 20px; cursor: pointer; color: #94a3b8; transition: 0.3s; text-decoration: none; }
+nav a:hover { color: #6366f1; }
+
+/* Hero Section with Code Image */
+.hero { 
+  height: 100vh; position: relative;
+  background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000') center/cover;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(15, 23, 42, 0.85); }
+.hero-text { position: relative; z-index: 1; text-align: center; color: white; }
+.hero-text h1 { font-size: 3.5rem; margin-bottom: 10px; }
+.hero-text h1 span { color: #6366f1; }
+.cta-btn { background: #6366f1; color: white; border: none; padding: 12px 30px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 20px; }
+
+/* Projects Grid - Equal Sizes */
+.projects-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+  gap: 30px; 
+  align-items: stretch;
+}
+.project-card { 
+  background: #435269; border: 1px solid #334155; border-radius: 12px; 
+  overflow: hidden; display: flex; flex-direction: column; height: 100%; 
+}
+.img-container { width: 100%; height: 220px; overflow: hidden; }
+.img-container img { width: 100%; height: 100%; object-fit: cover; }
+.card-info { padding: 25px; text-align: left; flex-grow: 1; }
+.card-info h3 { color: white; margin-bottom: 10px; }
+
+/* Skills & Contact */
+.skills-tags span { background: #334155; color: #818cf8; padding: 5px 15px; border-radius: 20px; margin: 5px; display: inline-block; }
+.contact-info a { color: #6366f1; text-decoration: none; }
+.footer { padding: 40px; background: #020617; text-align: center; color: #64748b; }

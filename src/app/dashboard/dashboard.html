@@ -1,0 +1,74 @@
+<div class="dashboard-page">
+  <header class="navbar">
+    <h2 class="logo">Admin <span>Panel</span></h2>
+    <div class="nav-right">
+      <button class="view-btn" (click)="goToPortfolio()">View Portfolio</button>
+      <span class="badge">Control Mode</span>
+    </div>
+  </header>
+
+  <div class="alert success" *ngIf="successMessage">{{ successMessage }}</div>
+  <div class="alert danger" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+  <div class="main-content">
+    <div class="card form-box">
+      <h3>{{ isEditMode ? 'Update Project' : 'Add New Project' }}</h3>
+      
+      <form #projectForm="ngForm">
+        <div class="field">
+          <label>Project Title</label>
+          <input type="text" name="title" [(ngModel)]="newProject.title" #title="ngModel" required
+                 [class.error-border]="title.invalid && (title.touched || submitted)">
+          <small class="error-msg" *ngIf="title.invalid && (title.touched || submitted)">Name is required</small>
+        </div>
+
+        <div class="field">
+          <label>Description</label>
+          <textarea name="description" [(ngModel)]="newProject.description" #desc="ngModel" required
+                    [class.error-border]="desc.invalid && (desc.touched || submitted)"></textarea>
+          <small class="error-msg" *ngIf="desc.invalid && (desc.touched || submitted)">Description is required</small>
+        </div>
+
+        <div class="field">
+          <label>Image URL</label>
+          <input type="text" name="imageUrl" [(ngModel)]="newProject.imageUrl" #img="ngModel" required
+                 [class.error-border]="img.invalid && (img.touched || submitted)">
+          <small class="error-msg" *ngIf="img.invalid && (img.touched || submitted)">Image URL is required</small>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn-save" (click)="saveProject(projectForm)">
+            {{ isEditMode ? 'Update Project' : 'Save Project' }}
+          </button>
+          <button type="button" class="btn-cancel" *ngIf="isEditMode" (click)="resetForm(projectForm)">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card table-box">
+      <h3>Project List ({{ projects.length }})</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Preview</th>
+            <th>Project Title</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of projects">
+            <td><img [src]="p.imageUrl" class="img-preview" alt="project"></td>
+            <td><strong>{{ p.title }}</strong></td>
+            <td>
+              <button class="link-edit" (click)="editProject(p)">Edit</button>
+              <button class="link-delete" (click)="deleteProject(p._id)">Delete</button>
+            </td>
+          </tr>
+          <tr *ngIf="projects.length === 0">
+            <td colspan="3" class="no-data">No projects found. Add your first project!</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

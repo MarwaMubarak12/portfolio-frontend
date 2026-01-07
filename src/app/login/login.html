@@ -1,0 +1,21 @@
+<div class="login-wrapper">
+  <div class="login-box">
+    <h2>login</h2>
+    
+    <div class="form-group">
+      <input type="email" 
+             name="email" 
+             [(ngModel)]="user.email" 
+             placeholder="e-mail">
+    </div>
+
+    <div class="form-group">
+      <input type="password" 
+             name="password" 
+             [(ngModel)]="user.password" 
+             placeholder="password">
+    </div>
+
+    <button (click)="onLogin()">login</button>
+  </div>
+</div>

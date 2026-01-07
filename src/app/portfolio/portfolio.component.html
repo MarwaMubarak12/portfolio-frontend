@@ -1,0 +1,78 @@
+<div class="portfolio-wrapper">
+  
+  <header class="navbar">
+    <div class="container nav-content">
+      <div class="logo">M<span>.</span>Mubarak</div>
+      <nav>
+        <a (click)="scrollTo('home')">Home</a>
+        <a (click)="scrollTo('about')">About</a>
+        <a (click)="scrollTo('projects')">Projects</a>
+        <a (click)="scrollTo('contact')">Contact Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+    <h5><span>&lt;</span> Welcome to my world <span>/&gt;</span></h5>
+      <h1>Hi, I'm <span>Marwa Mubarak</span></h1>
+      <h2>Full Stack Web Developer</h2>
+      <p>Specializing in building high-performance web applications using the <strong>MEAN Stack</strong>.</p>
+      <button class="cta-btn" (click)="scrollTo('contact')">Hire Me</button>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <p>I am a creative and dedicated Full Stack Web Developer based in Egypt. I specialize in <strong>MEAN stack</strong> (MongoDB, Express, Angular, Node.js) to turn complex problems into beautiful, functional code.</p>
+        <div class="skills-tags">
+          <span>Angular</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>TypeScript</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section gray-bg">
+    <div class="container">
+      <h2 class="section-title">My Projects</h2>
+      
+      <div class="projects-grid">
+        <div class="project-card" *ngFor="let project of projects">
+          <div class="img-container">
+            <img [src]="project.imageUrl" [alt]="project.title" 
+                 (error)="project.imageUrl='https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600'">
+          </div>
+          <div class="card-info">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-card">
+        <p>I'm always open to discussing new projects or opportunities.</p>
+        <div class="contact-links">
+          <p>📧 Email: <strong>marwamubarak6273@gmail.com</strong></p>
+             <a href="https://github.com/MarwaMubarak12" target="_blank" class="social-link">
+     <i class="fab fa-github"></i>🔗 GitHub 
+  </a>
+          <p>📍 Location: <strong>Cairo, Egypt</strong></p>
+       
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Marwa Mubarak | MEAN Stack Developer</p>
+  </footer>
+
+</div>

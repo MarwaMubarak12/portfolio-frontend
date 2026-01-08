@@ -14,8 +14,8 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   user = {
-    email: 'admin@gmail.com',
-    password: '123456admin'
+    email: '',
+    password: ''
   };
 
   constructor(private auth: AuthService, private router: Router) {}
@@ -34,4 +34,5 @@ export class LoginComponent {
       }
     );
   }
+
 }

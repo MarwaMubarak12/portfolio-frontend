@@ -45,8 +45,6 @@ export class DashboardComponent implements OnInit {
     if (form.invalid) return;
 
   
-
-    // 2. التحقق من تكرار الاسم
     const isDuplicate = this.projects.some(p => 
       p.title.toLowerCase() === this.newProject.title.toLowerCase() && p._id !== this.currentProjectId
     );
@@ -95,10 +93,11 @@ export class DashboardComponent implements OnInit {
     this.submitted = false;
     this.currentProjectId = null;
     this.newProject = { title: '', description: '', imageUrl: '' };
-    form.resetForm(); // يمسح البيانات واللون الأحمر تماماً
+    form.resetForm();
   }
 
   goToPortfolio() {
     this.router.navigate(['/portfolio']);
   }
+
 }
